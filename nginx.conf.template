@@ -1,0 +1,17 @@
+events {
+
+}
+
+http {
+    server {
+        listen $PORT;
+        
+        if ($http_x_forwarded_proto = "http") {
+            return 301 https://$host$request_uri;
+        }
+        
+        location ~ {
+            proxy_pass http://localhost:$OTHER_PORT;
+        }
+    }
+}
