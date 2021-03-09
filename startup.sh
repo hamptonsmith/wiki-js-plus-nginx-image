@@ -28,6 +28,7 @@ cat config.yml
 
 echo
 
+# See https://github.com/Requarks/wiki/issues/2949#issuecomment-793338541
 unset DATABASE_URL
 
 nginx
